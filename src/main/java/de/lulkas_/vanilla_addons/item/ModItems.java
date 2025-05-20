@@ -20,7 +20,8 @@ public class ModItems {
     private static final List<Item> items = new ArrayList<>();
     private static final Map<String, String> keyToTranslationMap = new HashMap<>();
 
-    public static final Item TEST_ITEM = registerItem("test_item", "Test Item", true, new Item(new Item.Settings()));
+    public static final Item COMPRESSED_EMERALD = registerItem("compressed_emerald", "Compressed Emerald", true,
+            new Item(new Item.Settings()));
 
     private static Item registerItem(String name, String translation, boolean useDefaultModel, Item item) {
         if(useDefaultModel) {

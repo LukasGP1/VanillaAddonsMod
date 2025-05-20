@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "vanilla_addons:item/test_item"
+    "layer0": "vanilla_addons:item/compressed_emerald"
   }
 }

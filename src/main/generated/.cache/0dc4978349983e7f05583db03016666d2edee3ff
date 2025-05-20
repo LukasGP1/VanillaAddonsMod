@@ -1,1 +1,5 @@
-// 1.21.1	2025-05-20T21:24:24.2689059	Vanillla Addons/Recipes
+// 1.21.1	2025-05-20T21:44:29.2088253	Vanillla Addons/Recipes
+9ec486470a2a85b51c4273f6a200dffcaf948999 data\vanilla_addons\advancement\recipes\misc\compressed_emerald.json
+0754136e8c3328e8bbf6a275c81a0d9c04a205ef data\vanilla_addons\recipe\emerald_block.json
+970e3948a4ab56bd5ed69730b962284764e44384 data\vanilla_addons\recipe\compressed_emerald.json
+dab0fc4173d86f5fa76e4d8d74b329c494a46b70 data\vanilla_addons\advancement\recipes\misc\emerald_block.json

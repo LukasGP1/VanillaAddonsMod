@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "vanilla_addons:compressed_emerald"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "minecraft:emerald_block"
+  }
+}
