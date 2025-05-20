@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"de.lulkas_.vanilla_addons.VanilllaAddons"
+          "de.lulkas_.vanilla_addons.VanillaAddons"
 		],
 		"fabric-datagen": [
-			"de.lulkas_.vanilla_addons.VanilllaAddonsDataGenerator"
+			"de.lulkas_.vanilla_addons.VanillaAddonsDataGenerator"
 		]
 	},
 	"mixins": [
