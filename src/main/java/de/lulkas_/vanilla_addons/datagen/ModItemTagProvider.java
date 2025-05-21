@@ -19,6 +19,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.EMERALD_BOOTS)
                 .add(ModItems.EMERALD_LEGGINGS)
                 .add(ModItems.EMERALD_CHESTPLATE)
-                .add(ModItems.EMERALD_HELMET);
+                .add(ModItems.EMERALD_HELMET)
+                .add(ModItems.COPPER_BOOTS)
+                .add(ModItems.COPPER_LEGGINGS)
+                .add(ModItems.COPPER_CHESTPLATE)
+                .add(ModItems.COPPER_HELMET);
     }
 }

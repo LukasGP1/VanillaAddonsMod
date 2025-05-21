@@ -37,6 +37,19 @@ public class ModItems {
             new ArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
                     new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))));
 
+    public static final Item COPPER_BOOTS = registerItem("copper_boots", "Copper Boots", false,
+            new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
+                    new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(15))));
+    public static final Item COPPER_LEGGINGS = registerItem("copper_leggings", "Copper Leggings", false,
+            new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
+                    new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(15))));
+    public static final Item COPPER_CHESTPLATE = registerItem("copper_chestplate", "Copper Chestplate", false,
+            new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(15))));
+    public static final Item COPPER_HELMET = registerItem("copper_helmet", "Copper Helmet", false,
+            new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+                    new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))));
+
     private static Item registerItem(String name, String translation, boolean useDefaultModel, Item item) {
         if(useDefaultModel) {
             defaultItemModels.add(item);
