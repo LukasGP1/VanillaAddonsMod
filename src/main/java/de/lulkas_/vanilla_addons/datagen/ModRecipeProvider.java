@@ -23,6 +23,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         offerArmorRecipe(ModItems.COMPRESSED_EMERALD, ModItems.EMERALD_BOOTS, ModItems.EMERALD_LEGGINGS, ModItems.EMERALD_CHESTPLATE, ModItems.EMERALD_HELMET, exporter);
         offerArmorRecipe(Items.NETHERITE_INGOT, Items.NETHERITE_BOOTS, Items.NETHERITE_LEGGINGS, Items.NETHERITE_CHESTPLATE, Items.NETHERITE_HELMET, exporter);
+        offerArmorRecipe(Items.CHAIN, Items.CHAINMAIL_BOOTS, Items.CHAINMAIL_LEGGINGS, Items.CHAINMAIL_CHESTPLATE, Items.CHAINMAIL_HELMET, exporter);
         offerArmorRecipe(Items.COPPER_INGOT, ModItems.COPPER_BOOTS, ModItems.COPPER_LEGGINGS, ModItems.COPPER_CHESTPLATE, ModItems.COPPER_HELMET, exporter);
     }
 

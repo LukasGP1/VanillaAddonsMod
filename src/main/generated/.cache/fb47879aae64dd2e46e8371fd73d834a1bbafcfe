@@ -1,4 +1,4 @@
-// 1.21.1	2025-05-21T17:34:08.5391517	Vanillla Addons/Model Definitions
+// 1.21.1	2025-05-21T21:09:38.1322857	Vanillla Addons/Model Definitions
 dc209f154012ec259767707fafb56003907b2f2b assets\vanilla_addons\models\item\emerald_boots_amethyst_trim.json
 4741a510de0a4b24f9a3ec15fceb6f77015b0949 assets\vanilla_addons\models\item\copper_chestplate_diamond_trim.json
 78b2a3ae09210b432325b23acce94f564e389683 assets\vanilla_addons\models\item\copper_chestplate_iron_trim.json
@@ -78,8 +78,8 @@ adac66d275fef2ebddf30b92780735803ea04e43 assets\vanilla_addons\models\item\coppe
 a8d018ee2b73292eed6bdc8b3952a1786c51d4cb assets\vanilla_addons\models\item\emerald_helmet_redstone_trim.json
 724ae65b43ff2852fa412de2cd395109c10ba8a2 assets\vanilla_addons\models\item\copper_leggings_emerald_trim.json
 5b7c76d4ec1b8e0d47849d1b84676b4bbd5c4610 assets\vanilla_addons\models\item\emerald_boots_emerald_trim.json
-d54ab0d7efc03c1ca7ccd9a6dfc123e30f4b01a0 assets\vanilla_addons\models\item\copper_chestplate_redstone_trim.json
 35b9ffb066b3eb16add295b70b88ce80f1809a74 assets\vanilla_addons\models\item\emerald_leggings_emerald_trim.json
+d54ab0d7efc03c1ca7ccd9a6dfc123e30f4b01a0 assets\vanilla_addons\models\item\copper_chestplate_redstone_trim.json
 22fcf00134629109bc5d03f4afd603e4fb263495 assets\vanilla_addons\models\item\emerald_chestplate_quartz_trim.json
 084d01b5318f508830da5f596c22aec7c3b41a37 assets\vanilla_addons\models\item\copper_boots_netherite_trim.json
 3f2c90354372de2741a24ccb2cbedc4c8f2ae462 assets\vanilla_addons\models\item\copper_leggings_amethyst_trim.json
