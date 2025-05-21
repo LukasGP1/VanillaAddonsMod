@@ -1,6 +1,7 @@
 package de.lulkas_.vanilla_addons.item;
 
 import de.lulkas_.vanilla_addons.VanillaAddons;
+import de.lulkas_.vanilla_addons.item.custom.EmeraldArmorItem;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
@@ -25,16 +26,16 @@ public class ModItems {
             new Item(new Item.Settings()));
 
     public static final Item EMERALD_BOOTS = registerItem("emerald_boots", "Emerald Boots", false,
-            new ArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
+            new EmeraldArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(15))));
     public static final Item EMERALD_LEGGINGS = registerItem("emerald_leggings", "Emerald Leggings", false,
-            new ArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
+            new EmeraldArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
                     new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(15))));
     public static final Item EMERALD_CHESTPLATE = registerItem("emerald_chestplate", "Emerald Chestplate", false,
-            new ArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+            new EmeraldArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
                     new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(15))));
     public static final Item EMERALD_HELMET = registerItem("emerald_helmet", "Emerald Helmet", false,
-            new ArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+            new EmeraldArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
                     new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))));
 
     public static final Item COPPER_BOOTS = registerItem("copper_boots", "Copper Boots", false,
