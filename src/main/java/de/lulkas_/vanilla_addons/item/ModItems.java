@@ -4,6 +4,7 @@ import de.lulkas_.vanilla_addons.VanillaAddons;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
@@ -22,6 +23,19 @@ public class ModItems {
 
     public static final Item COMPRESSED_EMERALD = registerItem("compressed_emerald", "Compressed Emerald", true,
             new Item(new Item.Settings()));
+
+    public static final Item EMERALD_BOOTS = registerItem("emerald_boots", "Emerald Boots", false,
+            new ArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
+                    new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(15))));
+    public static final Item EMERALD_LEGGINGS = registerItem("emerald_leggings", "Emerald Leggings", false,
+            new ArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
+                    new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(15))));
+    public static final Item EMERALD_CHESTPLATE = registerItem("emerald_chestplate", "Emerald Chestplate", false,
+            new ArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(15))));
+    public static final Item EMERALD_HELMET = registerItem("emerald_helmet", "Emerald Helmet", false,
+            new ArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+                    new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))));
 
     private static Item registerItem(String name, String translation, boolean useDefaultModel, Item item) {
         if(useDefaultModel) {

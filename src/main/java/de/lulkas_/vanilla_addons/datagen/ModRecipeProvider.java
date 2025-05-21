@@ -4,6 +4,8 @@ import de.lulkas_.vanilla_addons.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeExporter;
+import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
@@ -18,5 +20,35 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter exporter) {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.EMERALD_BLOCK, RecipeCategory.MISC, ModItems.COMPRESSED_EMERALD);
+        offerArmorRecipe(ModItems.COMPRESSED_EMERALD, ModItems.EMERALD_BOOTS, ModItems.EMERALD_LEGGINGS, ModItems.EMERALD_CHESTPLATE, ModItems.EMERALD_HELMET, exporter);
+    }
+
+    public static void offerArmorRecipe(ItemConvertible material, ItemConvertible boots, ItemConvertible leggings, ItemConvertible chestplate, ItemConvertible helmet, RecipeExporter exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, boots)
+                .pattern("E E")
+                .pattern("E E")
+                .input('E', material)
+                .criterion(hasItem(material), conditionsFromItem(material))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, leggings)
+                .pattern("EEE")
+                .pattern("E E")
+                .pattern("E E")
+                .input('E', material)
+                .criterion(hasItem(material), conditionsFromItem(material))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, chestplate)
+                .pattern("E E")
+                .pattern("EEE")
+                .pattern("EEE")
+                .input('E', material)
+                .criterion(hasItem(material), conditionsFromItem(material))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, helmet)
+                .pattern("EEE")
+                .pattern("E E")
+                .input('E', material)
+                .criterion(hasItem(material), conditionsFromItem(material))
+                .offerTo(exporter);
     }
 }
