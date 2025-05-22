@@ -16,5 +16,7 @@ public class ModLanguageProvider extends FabricLanguageProvider {
     public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
         ModItems.generateTranslations(translationBuilder);
         translationBuilder.add("item_group.vanilla_addons.vanilla_addons", "Vanilla Addons");
+        translationBuilder.add("tooltip.vanilla_addons.emerald_armor.first", "With full set:");
+        translationBuilder.add("tooltip.vanilla_addons.emerald_armor.speed", "Speed");
     }
 }

@@ -8,5 +8,7 @@
   "item.vanilla_addons.emerald_chestplate": "Emerald Chestplate",
   "item.vanilla_addons.emerald_helmet": "Emerald Helmet",
   "item.vanilla_addons.emerald_leggings": "Emerald Leggings",
-  "item_group.vanilla_addons.vanilla_addons": "Vanilla Addons"
+  "item_group.vanilla_addons.vanilla_addons": "Vanilla Addons",
+  "tooltip.vanilla_addons.emerald_armor.first": "With full set:",
+  "tooltip.vanilla_addons.emerald_armor.speed": "Speed"
 }

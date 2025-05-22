@@ -8,8 +8,13 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
+
+import java.util.List;
 
 public class EmeraldArmorItem extends ArmorItem {
     public EmeraldArmorItem(RegistryEntry<ArmorMaterial> material, Type type, Settings settings) {
@@ -41,5 +46,12 @@ public class EmeraldArmorItem extends ArmorItem {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        tooltip.add(Text.translatable("tooltip.vanilla_addons.emerald_armor.first").formatted(Formatting.GRAY));
+        tooltip.add(Text.literal("+2 ").append(Text.translatable("tooltip.vanilla_addons.emerald_armor.speed")).formatted(Formatting.BLUE));
+        super.appendTooltip(stack, context, tooltip, type);
     }
 }
