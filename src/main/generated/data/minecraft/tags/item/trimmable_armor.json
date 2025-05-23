@@ -7,6 +7,9 @@
     "vanilla_addons:copper_boots",
     "vanilla_addons:copper_leggings",
     "vanilla_addons:copper_chestplate",
-    "vanilla_addons:copper_helmet"
+    "vanilla_addons:copper_helmet",
+    "vanilla_addons:turtle_boots",
+    "vanilla_addons:turtle_leggings",
+    "vanilla_addons:turtle_chestplate"
   ]
 }

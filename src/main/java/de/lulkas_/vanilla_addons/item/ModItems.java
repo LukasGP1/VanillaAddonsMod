@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
@@ -50,6 +51,13 @@ public class ModItems {
     public static final Item COPPER_HELMET = registerItem("copper_helmet", "Copper Helmet", false,
             new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
                     new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))));
+
+    public static final Item TURTLE_BOOTS = registerItem("turtle_boots", "Turtle Boots", false,
+            new ArmorItem(ArmorMaterials.TURTLE, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(25))));
+    public static final Item TURTLE_LEGGINGS = registerItem("turtle_leggings", "Turtle Leggings", false,
+            new ArmorItem(ArmorMaterials.TURTLE, ArmorItem.Type.LEGGINGS, new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(25))));
+    public static final Item TURTLE_CHESTPLATE = registerItem("turtle_chestplate", "Turtle Chestplate", false,
+            new ArmorItem(ArmorMaterials.TURTLE, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(25))));
 
     private static Item registerItem(String name, String translation, boolean useDefaultModel, Item item) {
         if(useDefaultModel) {

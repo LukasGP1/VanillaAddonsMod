@@ -25,34 +25,43 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerArmorRecipe(Items.NETHERITE_INGOT, Items.NETHERITE_BOOTS, Items.NETHERITE_LEGGINGS, Items.NETHERITE_CHESTPLATE, Items.NETHERITE_HELMET, exporter);
         offerArmorRecipe(Items.CHAIN, Items.CHAINMAIL_BOOTS, Items.CHAINMAIL_LEGGINGS, Items.CHAINMAIL_CHESTPLATE, Items.CHAINMAIL_HELMET, exporter);
         offerArmorRecipe(Items.COPPER_INGOT, ModItems.COPPER_BOOTS, ModItems.COPPER_LEGGINGS, ModItems.COPPER_CHESTPLATE, ModItems.COPPER_HELMET, exporter);
+        offerArmorRecipe(Items.TURTLE_SCUTE, ModItems.TURTLE_BOOTS, ModItems.TURTLE_LEGGINGS, ModItems.TURTLE_CHESTPLATE, null, exporter);
     }
 
     public static void offerArmorRecipe(ItemConvertible material, ItemConvertible boots, ItemConvertible leggings, ItemConvertible chestplate, ItemConvertible helmet, RecipeExporter exporter) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, boots)
-                .pattern("E E")
-                .pattern("E E")
-                .input('E', material)
-                .criterion(hasItem(material), conditionsFromItem(material))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, leggings)
-                .pattern("EEE")
-                .pattern("E E")
-                .pattern("E E")
-                .input('E', material)
-                .criterion(hasItem(material), conditionsFromItem(material))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, chestplate)
-                .pattern("E E")
-                .pattern("EEE")
-                .pattern("EEE")
-                .input('E', material)
-                .criterion(hasItem(material), conditionsFromItem(material))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, helmet)
-                .pattern("EEE")
-                .pattern("E E")
-                .input('E', material)
-                .criterion(hasItem(material), conditionsFromItem(material))
-                .offerTo(exporter);
+        if(boots != null) {
+            ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, boots)
+                    .pattern("E E")
+                    .pattern("E E")
+                    .input('E', material)
+                    .criterion(hasItem(material), conditionsFromItem(material))
+                    .offerTo(exporter);
+        }
+        if(leggings != null) {
+            ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, leggings)
+                    .pattern("EEE")
+                    .pattern("E E")
+                    .pattern("E E")
+                    .input('E', material)
+                    .criterion(hasItem(material), conditionsFromItem(material))
+                    .offerTo(exporter);
+        }
+        if(chestplate != null) {
+            ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, chestplate)
+                    .pattern("E E")
+                    .pattern("EEE")
+                    .pattern("EEE")
+                    .input('E', material)
+                    .criterion(hasItem(material), conditionsFromItem(material))
+                    .offerTo(exporter);
+        }
+        if(helmet != null) {
+            ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, helmet)
+                    .pattern("EEE")
+                    .pattern("E E")
+                    .input('E', material)
+                    .criterion(hasItem(material), conditionsFromItem(material))
+                    .offerTo(exporter);
+        }
     }
 }
