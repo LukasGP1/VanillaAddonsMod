@@ -3,7 +3,8 @@
 	"package": "de.lulkas_.vanilla_addons.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-      "TurtleArmorWaterBreathingMixin"
+        "TurtleArmorWaterBreathingMixin",
+		"RaidMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

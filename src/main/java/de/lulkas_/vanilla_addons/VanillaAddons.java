@@ -1,5 +1,6 @@
 package de.lulkas_.vanilla_addons;
 
+import de.lulkas_.vanilla_addons.event.ModEvents;
 import de.lulkas_.vanilla_addons.item.ModItemGroups;
 import de.lulkas_.vanilla_addons.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -15,5 +16,6 @@ public class VanillaAddons implements ModInitializer {
 	public void onInitialize() {
 		ModItems.registerModItems();
 		ModItemGroups.registerModItemGroups();
+		ModEvents.registerModEvents();
 	}
 }
