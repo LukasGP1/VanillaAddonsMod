@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "vanilla_addons:compressed_emerald"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " EE",
+    " SE",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanilla_addons:emerald_axe"
+  }
+}

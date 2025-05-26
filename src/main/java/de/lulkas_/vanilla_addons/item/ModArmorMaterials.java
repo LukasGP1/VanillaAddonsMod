@@ -18,12 +18,12 @@ import java.util.function.Supplier;
 public class ModArmorMaterials {
     public static final RegistryEntry<ArmorMaterial> EMERALD_ARMOR_MATERIAL = registerArmorMaterial("emerald",
             () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 2);
-                map.put(ArmorItem.Type.LEGGINGS, 5);
-                map.put(ArmorItem.Type.CHESTPLATE, 6);
+                map.put(ArmorItem.Type.BOOTS, 1);
+                map.put(ArmorItem.Type.LEGGINGS, 3);
+                map.put(ArmorItem.Type.CHESTPLATE, 5);
                 map.put(ArmorItem.Type.HELMET, 2);
-                map.put(ArmorItem.Type.BODY, 5);
-            }), 15, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, () -> Ingredient.ofItems(ModItems.COMPRESSED_EMERALD),
+                map.put(ArmorItem.Type.BODY, 7);
+            }), 25, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, () -> Ingredient.ofItems(ModItems.COMPRESSED_EMERALD),
                     List.of(new ArmorMaterial.Layer(Identifier.of(VanillaAddons.MOD_ID, "emerald"))), 0, 0));
 
     public static final RegistryEntry<ArmorMaterial> COPPER_ARMOR_MATERIAL = registerArmorMaterial("copper",

@@ -27,5 +27,16 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.TURTLE_BOOTS)
                 .add(ModItems.TURTLE_LEGGINGS)
                 .add(ModItems.TURTLE_CHESTPLATE);
+
+        getOrCreateTagBuilder(ItemTags.SWORDS)
+                .add(ModItems.EMERALD_SWORD);
+        getOrCreateTagBuilder(ItemTags.PICKAXES)
+                .add(ModItems.EMERALD_PICKAXE);
+        getOrCreateTagBuilder(ItemTags.AXES)
+                .add(ModItems.EMERALD_AXE);
+        getOrCreateTagBuilder(ItemTags.SHOVELS)
+                .add(ModItems.EMERALD_SHOVEL);
+        getOrCreateTagBuilder(ItemTags.HOES)
+                .add(ModItems.EMERALD_HOE);
     }
 }
