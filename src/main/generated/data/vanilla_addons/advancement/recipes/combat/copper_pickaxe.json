@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_compressed_emerald": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanilla_addons:compressed_emerald"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanilla_addons:copper_pickaxe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_compressed_emerald"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanilla_addons:copper_pickaxe"
+    ]
+  }
+}

@@ -3,6 +3,7 @@ package de.lulkas_.vanilla_addons.item;
 import com.google.common.base.Suppliers;
 import de.lulkas_.vanilla_addons.util.ModTags;
 import net.minecraft.block.Block;
+import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.tag.TagKey;
@@ -10,7 +11,8 @@ import net.minecraft.registry.tag.TagKey;
 import java.util.function.Supplier;
 
 public enum ModToolMaterials implements ToolMaterial {
-    EMERALD(ModTags.Blocks.INCORRECT_FOR_EMERALD_TOOL, 250, 12.0F, 0.0F, 22, () -> Ingredient.ofItems(ModItems.COMPRESSED_EMERALD));
+    EMERALD(ModTags.Blocks.INCORRECT_FOR_EMERALD_TOOL, 250, 12.0F, 0.0F, 22, () -> Ingredient.ofItems(ModItems.COMPRESSED_EMERALD)),
+    COPPER(ModTags.Blocks.INCORRECT_FOR_COPPER_TOOL, 130, 12.0F, 0.0F, 22, () -> Ingredient.ofItems(Items.COPPER_INGOT));
 
     private final TagKey<Block> inverseTag;
     private final int itemDurability;

@@ -28,6 +28,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerArmorRecipe(Items.TURTLE_SCUTE, ModItems.TURTLE_BOOTS, ModItems.TURTLE_LEGGINGS, ModItems.TURTLE_CHESTPLATE, null, exporter);
 
         offerToolRecipe(ModItems.COMPRESSED_EMERALD, ModItems.EMERALD_SWORD, ModItems.EMERALD_PICKAXE, ModItems.EMERALD_AXE, ModItems.EMERALD_SHOVEL, ModItems.EMERALD_HOE, exporter);
+        offerToolRecipe(ModItems.COMPRESSED_EMERALD, ModItems.COPPER_SWORD, ModItems.COPPER_PICKAXE, ModItems.COPPER_AXE, ModItems.COPPER_SHOVEL, ModItems.COPPER_HOE, exporter);
     }
 
     public static void offerArmorRecipe(ItemConvertible material, ItemConvertible boots, ItemConvertible leggings, ItemConvertible chestplate, ItemConvertible helmet, RecipeExporter exporter) {
