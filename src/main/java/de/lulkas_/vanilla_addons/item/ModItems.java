@@ -36,6 +36,8 @@ public class ModItems {
     public static final Item EMERALD_HELMET = registerItem("emerald_helmet", "Emerald Helmet", null,
             new EmeraldArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
                     new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))));
+    public static final  Item EMERALD_HORSE_ARMOR = registerItem("emerald_horse_armor", "Emerald Horse Armor", Models.GENERATED,
+            new AnimalArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, AnimalArmorItem.Type.EQUESTRIAN, false, new Item.Settings().maxCount(1)));
 
     public static final Item COPPER_BOOTS = registerItem("copper_boots", "Copper Boots", null,
             new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
@@ -49,6 +51,8 @@ public class ModItems {
     public static final Item COPPER_HELMET = registerItem("copper_helmet", "Copper Helmet", null,
             new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
                     new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(10))));
+    public static final  Item COPPER_HORSE_ARMOR = registerItem("copper_horse_armor", "Copper Horse Armor", Models.GENERATED,
+            new AnimalArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, AnimalArmorItem.Type.EQUESTRIAN, false, new Item.Settings().maxCount(1)));
 
     public static final Item TURTLE_BOOTS = registerItem("turtle_boots", "Turtle Boots", null,
             new ArmorItem(ArmorMaterials.TURTLE, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(25))));
