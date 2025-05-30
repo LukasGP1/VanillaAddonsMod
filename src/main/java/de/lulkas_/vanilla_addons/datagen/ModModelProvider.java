@@ -1,5 +1,6 @@
 package de.lulkas_.vanilla_addons.datagen;
 
+import de.lulkas_.vanilla_addons.block.ModBlocks;
 import de.lulkas_.vanilla_addons.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -14,7 +15,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-
+        ModBlocks.generateBlockStateModels(blockStateModelGenerator);
     }
 
     @Override

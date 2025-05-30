@@ -1,6 +1,7 @@
 package de.lulkas_.vanilla_addons.item;
 
 import de.lulkas_.vanilla_addons.VanillaAddons;
+import de.lulkas_.vanilla_addons.block.ModBlocks;
 import de.lulkas_.vanilla_addons.enchantment.ModEnchantments;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.enchantment.Enchantment;
@@ -23,6 +24,7 @@ public class ModItemGroups {
                     .displayName(Text.translatable("item_group.vanilla_addons.vanilla_addons"))
                     .entries((displayContext, entries) -> {
                         ModItems.addItemGroupEntries(entries);
+                        ModBlocks.addItemGroupEntries(entries);
                         addEnchantment(displayContext, entries, ModEnchantments.TOTEM_SAVIOR);
                     }).build()
     );
