@@ -1,4 +1,4 @@
-package de.lulkas_.vanilla_addons.util;
+package de.lulkas_.vanilla_addons.entity;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.raid.RaiderEntity;

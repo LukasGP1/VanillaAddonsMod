@@ -1,4 +1,4 @@
-package de.lulkas_.vanilla_addons.util;
+package de.lulkas_.vanilla_addons.tags;
 
 import de.lulkas_.vanilla_addons.VanillaAddons;
 import net.minecraft.block.Block;
@@ -18,6 +18,8 @@ public class ModTags {
     }
 
     public static class Items {
+        public static final TagKey<Item> TOTEM_ENCHANTABLE = createTag("totem_enchantable");
+
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(VanillaAddons.MOD_ID, name));
         }

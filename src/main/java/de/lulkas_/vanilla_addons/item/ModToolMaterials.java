@@ -1,7 +1,7 @@
 package de.lulkas_.vanilla_addons.item;
 
 import com.google.common.base.Suppliers;
-import de.lulkas_.vanilla_addons.util.ModTags;
+import de.lulkas_.vanilla_addons.tags.ModTags;
 import net.minecraft.block.Block;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;

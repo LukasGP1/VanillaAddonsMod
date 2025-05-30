@@ -1,0 +1,21 @@
+{
+  "anvil_cost": 2,
+  "description": {
+    "translate": "enchantment.vanilla_addons.totem_savior"
+  },
+  "max_cost": {
+    "base": 25,
+    "per_level_above_first": 9
+  },
+  "max_level": 255,
+  "min_cost": {
+    "base": 5,
+    "per_level_above_first": 7
+  },
+  "primary_items": "#vanilla_addons:totem_enchantable",
+  "slots": [
+    "offhand"
+  ],
+  "supported_items": "#vanilla_addons:totem_enchantable",
+  "weight": 5
+}

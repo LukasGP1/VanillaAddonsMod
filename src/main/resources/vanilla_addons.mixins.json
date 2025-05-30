@@ -4,7 +4,9 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
         "TurtleArmorWaterBreathingMixin",
-		"RaidMixin"
+		"RaidMixin",
+		"TotemUseCallbackMixin",
+		"TickCallbackMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

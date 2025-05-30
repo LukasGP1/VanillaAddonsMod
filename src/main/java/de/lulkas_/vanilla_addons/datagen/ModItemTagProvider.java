@@ -1,8 +1,10 @@
 package de.lulkas_.vanilla_addons.datagen;
 
 import de.lulkas_.vanilla_addons.item.ModItems;
+import de.lulkas_.vanilla_addons.tags.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 
@@ -43,5 +45,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.HOES)
                 .add(ModItems.COPPER_HOE)
                 .add(ModItems.EMERALD_HOE);
+
+        getOrCreateTagBuilder(ModTags.Items.TOTEM_ENCHANTABLE)
+                .add(Items.TOTEM_OF_UNDYING);
     }
 }

@@ -1,5 +1,6 @@
-// 1.21.1	2025-05-29T10:42:25.9941777	Vanillla Addons/Tags for minecraft:item
+// 1.21.1	2025-05-30T17:49:23.6340228	Vanillla Addons/Tags for minecraft:item
 a314bf554b36a7664eaa39ab7105024d927538a7 data\minecraft\tags\item\shovels.json
+9dffb9d7eb766747226b453827c4a194d7c5911c data\vanilla_addons\tags\item\totem_enchantable.json
 3bfe5a73fd445307c6775cace5ea425f1cf4df88 data\minecraft\tags\item\axes.json
 3ea34d0d767f46a7dd908a61baee721fd11e04b2 data\minecraft\tags\item\trimmable_armor.json
 98f4ae0809d5a92d7bb02af2d75f84a287763a39 data\minecraft\tags\item\hoes.json

@@ -1,5 +1,6 @@
 package de.lulkas_.vanilla_addons.datagen;
 
+import de.lulkas_.vanilla_addons.datagen.util.RomanNumeralConverter;
 import de.lulkas_.vanilla_addons.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -18,5 +19,12 @@ public class ModLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("item_group.vanilla_addons.vanilla_addons", "Vanilla Addons");
         translationBuilder.add("tooltip.vanilla_addons.emerald_armor.first", "With full set:");
         translationBuilder.add("tooltip.vanilla_addons.emerald_armor.speed", "Speed");
+        translationBuilder.add("enchantment.vanilla_addons.totem_savior", "Totem Savior");
+        for(int level = 1; level <= 255; level++) {
+            if(level < 21) {
+                continue;
+            }
+            translationBuilder.add("enchantment.level." + level, RomanNumeralConverter.integerToRoman(level));
+        }
     }
 }
