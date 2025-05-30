@@ -21,7 +21,7 @@ public class ModLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("tooltip.vanilla_addons.emerald_armor.speed", "Speed");
         translationBuilder.add("enchantment.vanilla_addons.totem_savior", "Totem Savior");
         for(int level = 1; level <= 255; level++) {
-            if(level < 21) {
+            if(level < 11) {
                 continue;
             }
             translationBuilder.add("enchantment.level." + level, RomanNumeralConverter.integerToRoman(level));
