@@ -1,7 +1,7 @@
 package de.lulkas_.vanilla_addons.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
-import de.lulkas_.vanilla_addons.event.TotemUseCallback;
+import de.lulkas_.vanilla_addons.event.custom.TotemUseCallback;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.item.ItemStack;

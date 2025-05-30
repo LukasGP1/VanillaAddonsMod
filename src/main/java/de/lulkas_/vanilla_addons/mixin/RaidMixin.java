@@ -1,6 +1,6 @@
 package de.lulkas_.vanilla_addons.mixin;
 
-import de.lulkas_.vanilla_addons.event.RaidWaveSpawnCallback;
+import de.lulkas_.vanilla_addons.event.custom.RaidWaveSpawnCallback;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.village.raid.Raid;

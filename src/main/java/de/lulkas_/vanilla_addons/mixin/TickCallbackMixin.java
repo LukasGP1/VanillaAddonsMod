@@ -1,6 +1,6 @@
 package de.lulkas_.vanilla_addons.mixin;
 
-import de.lulkas_.vanilla_addons.event.TickCallback;
+import de.lulkas_.vanilla_addons.event.custom.TickCallback;
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

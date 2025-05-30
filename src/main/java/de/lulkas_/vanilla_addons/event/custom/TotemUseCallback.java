@@ -1,4 +1,4 @@
-package de.lulkas_.vanilla_addons.event;
+package de.lulkas_.vanilla_addons.event.custom;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
