@@ -55,4 +55,15 @@ public class EnchantmentUpgraderBlock extends BlockWithEntity implements BlockEn
             super.onStateReplaced(state, world, pos, newState, moved);
         }
     }
+
+    @Override
+    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if(world.getBlockEntity(pos) instanceof EnchantmentUpgraderBlockEntity enchantmentUpgraderBlockEntity) {
+            if(!world.isClient()) {
+                player.openHandledScreen(enchantmentUpgraderBlockEntity);
+            }
+        }
+
+        return ItemActionResult.SUCCESS;
+    }
 }

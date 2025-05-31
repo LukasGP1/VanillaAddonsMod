@@ -5,6 +5,7 @@ import de.lulkas_.vanilla_addons.block.entity.ModBlockEntities;
 import de.lulkas_.vanilla_addons.event.ModEvents;
 import de.lulkas_.vanilla_addons.item.ModItemGroups;
 import de.lulkas_.vanilla_addons.item.ModItems;
+import de.lulkas_.vanilla_addons.screen.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ public class VanillaAddons implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModItemGroups.registerModItemGroups();
 		ModBlockEntities.registerModBlockEntities();
+		ModScreenHandlers.registerModScreenHandlers();
 		ModEvents.registerModEvents();
 	}
 }

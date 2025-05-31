@@ -20,6 +20,9 @@
 		],
 		"fabric-datagen": [
 			"de.lulkas_.vanilla_addons.VanillaAddonsDataGenerator"
+		],
+		"client": [
+			"de.lulkas_.vanilla_addons.VanillaAddonsClient"
 		]
 	},
 	"mixins": [
