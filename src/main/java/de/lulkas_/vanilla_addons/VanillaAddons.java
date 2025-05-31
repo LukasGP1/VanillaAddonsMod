@@ -1,6 +1,7 @@
 package de.lulkas_.vanilla_addons;
 
 import de.lulkas_.vanilla_addons.block.ModBlocks;
+import de.lulkas_.vanilla_addons.block.entity.ModBlockEntities;
 import de.lulkas_.vanilla_addons.event.ModEvents;
 import de.lulkas_.vanilla_addons.item.ModItemGroups;
 import de.lulkas_.vanilla_addons.item.ModItems;
@@ -18,6 +19,7 @@ public class VanillaAddons implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModItemGroups.registerModItemGroups();
+		ModBlockEntities.registerModBlockEntities();
 		ModEvents.registerModEvents();
 	}
 }

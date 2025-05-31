@@ -1,6 +1,7 @@
 package de.lulkas_.vanilla_addons.block;
 
 import de.lulkas_.vanilla_addons.VanillaAddons;
+import de.lulkas_.vanilla_addons.block.custom.EnchantmentUpgraderBlock;
 import de.lulkas_.vanilla_addons.datagen.ModLootTableProvider;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.block.AbstractBlock;
@@ -30,6 +31,11 @@ public class ModBlocks {
             BlockStateModelGenerator::registerSimpleCubeAll,
             BlockLootTableGenerator::addDrop,
             new Block(AbstractBlock.Settings.create().strength(4f).requiresTool()));
+
+    public static final Block ENCHANTMENT_UPGRADER = registerBlock("enchantment_upgrader", "Enchantment Upgrader",
+            (blockStateModelGenerator, block) -> {},
+            BlockLootTableGenerator::addDrop,
+            new EnchantmentUpgraderBlock(AbstractBlock.Settings.create().nonOpaque()));
 
     private static Block registerBlock(String name, String translation, BiConsumer<BlockStateModelGenerator, Block> blockStateModelGeneration, BiConsumer<ModLootTableProvider, Block> lootTableGeneration, Block block) {
         registerBlockItem(name, block);
