@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "vanilla_addons:block/compressed_emerald_block"
+    }
+  }
+}

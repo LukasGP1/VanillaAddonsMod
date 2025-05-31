@@ -1,5 +1,6 @@
 package de.lulkas_.vanilla_addons.datagen;
 
+import de.lulkas_.vanilla_addons.block.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -13,6 +14,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-
+        ModBlocks.generateLootTables(this);
     }
 }

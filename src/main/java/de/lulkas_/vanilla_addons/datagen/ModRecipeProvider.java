@@ -1,5 +1,6 @@
 package de.lulkas_.vanilla_addons.datagen;
 
+import de.lulkas_.vanilla_addons.block.ModBlocks;
 import de.lulkas_.vanilla_addons.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -20,6 +21,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter exporter) {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.EMERALD_BLOCK, RecipeCategory.MISC, ModItems.COMPRESSED_EMERALD);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.COMPRESSED_EMERALD, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COMPRESSED_EMERALD_BLOCK, getRecipeName(ModBlocks.COMPRESSED_EMERALD_BLOCK), null, convertBetween(ModItems.COMPRESSED_EMERALD, ModBlocks.COMPRESSED_EMERALD_BLOCK), null);
 
         offerArmorRecipe(ModItems.COMPRESSED_EMERALD, ModItems.EMERALD_BOOTS, ModItems.EMERALD_LEGGINGS, ModItems.EMERALD_CHESTPLATE, ModItems.EMERALD_HELMET, exporter);
         offerArmorRecipe(Items.NETHERITE_INGOT, Items.NETHERITE_BOOTS, Items.NETHERITE_LEGGINGS, Items.NETHERITE_CHESTPLATE, Items.NETHERITE_HELMET, exporter);
