@@ -26,7 +26,7 @@ public class EnchantmentUpgraderOutputSlot extends Slot {
     @Override
     public ItemStack takeStack(int amount) {
         if(this.player instanceof ServerPlayerEntity serverPlayer) {
-            EnchantmentUpgraderOutput output = blockEntity.getOutput();
+            EnchantmentUpgraderOutput output = blockEntity.getScreenHandler().getOutput();
             if(player.isCreative()) {
                 ItemStack toReturn = output.outputStack().copy();
                 blockEntity.inventory.clear();

@@ -1,6 +1,8 @@
 package de.lulkas_.vanilla_addons.screen.custom;
 
 import de.lulkas_.vanilla_addons.block.entity.custom.EnchantmentUpgraderBlockEntity;
+import de.lulkas_.vanilla_addons.block.entity.util.EnchantmentUpgraderOutput;
+import de.lulkas_.vanilla_addons.block.entity.util.EnchantmentUpgraderOutputGeneration;
 import de.lulkas_.vanilla_addons.screen.ModScreenHandlers;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,9 +13,13 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.util.math.BlockPos;
 
+import static de.lulkas_.vanilla_addons.block.entity.custom.EnchantmentUpgraderBlockEntity.INPUT_SLOT;
+import static de.lulkas_.vanilla_addons.block.entity.custom.EnchantmentUpgraderBlockEntity.OUTPUT_SLOT;
+
 public class EnchantmentUpgraderScreenHandler extends ScreenHandler {
     private final Inventory inventory;
     private final EnchantmentUpgraderBlockEntity blockEntity;
+    private EnchantmentUpgraderOutput output = new EnchantmentUpgraderOutput(ItemStack.EMPTY, 0);
 
     public EnchantmentUpgraderScreenHandler(int syncId, PlayerInventory playerInventory, BlockPos pos) {
         this(syncId, playerInventory, playerInventory.player.getWorld().getBlockEntity(pos));
@@ -32,10 +38,24 @@ public class EnchantmentUpgraderScreenHandler extends ScreenHandler {
         }
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
+
+        if(this.blockEntity != null) {
+            this.blockEntity.setScreenHandler(this);
+        }
     }
 
-    public EnchantmentUpgraderBlockEntity getBlockEntity() {
-        return blockEntity;
+    public void tick(EnchantmentUpgraderBlockEntity blockEntity) {
+        EnchantmentUpgraderOutput output = EnchantmentUpgraderOutputGeneration.getOutput(blockEntity.inventory.get(INPUT_SLOT));
+        this.output = output;
+        blockEntity.inventory.set(OUTPUT_SLOT, output.outputStack());
+    }
+
+    @Override
+    public void onClosed(PlayerEntity player) {
+        super.onClosed(player);
+        if(this.blockEntity != null) {
+            this.blockEntity.resetScreenHandler();
+        }
     }
 
     @Override
@@ -79,5 +99,9 @@ public class EnchantmentUpgraderScreenHandler extends ScreenHandler {
         for(int l = 0; l < 9; l++) {
             this.addSlot(new Slot(playerInventory, l, 8 + l * 18, 142));
         }
+    }
+
+    public EnchantmentUpgraderOutput getOutput() {
+        return output;
     }
 }

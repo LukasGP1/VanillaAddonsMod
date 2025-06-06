@@ -29,7 +29,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class EnchantmentUpgraderBlockEntity extends BlockEntity implements ImplementedInventory, ExtendedScreenHandlerFactory<BlockPos> {
     public final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY);
-    private EnchantmentUpgraderOutput output = new EnchantmentUpgraderOutput(ItemStack.EMPTY, 0);
+    private EnchantmentUpgraderScreenHandler screenHandler = null;
     public static final int INPUT_SLOT = 0;
     public static final int OUTPUT_SLOT = 1;
 
@@ -53,13 +53,9 @@ public class EnchantmentUpgraderBlockEntity extends BlockEntity implements Imple
     }
 
     public void tick(World world, BlockPos pos, BlockState state) {
-        EnchantmentUpgraderOutput output = EnchantmentUpgraderOutputGeneration.getOutput(inventory.get(INPUT_SLOT));
-        this.output = output;
-        inventory.set(OUTPUT_SLOT, output.outputStack());
-    }
-
-    public EnchantmentUpgraderOutput getOutput() {
-        return output;
+        if(this.screenHandler != null) {
+            this.screenHandler.tick(this);
+        }
     }
 
     @Override
@@ -97,5 +93,17 @@ public class EnchantmentUpgraderBlockEntity extends BlockEntity implements Imple
     @Override
     public NbtCompound toInitialChunkDataNbt(RegistryWrapper.WrapperLookup registryLookup) {
         return createNbt(registryLookup);
+    }
+
+    public void setScreenHandler(EnchantmentUpgraderScreenHandler screenHandler) {
+        this.screenHandler = screenHandler;
+    }
+
+    public void resetScreenHandler() {
+        this.screenHandler = null;
+    }
+
+    public EnchantmentUpgraderScreenHandler getScreenHandler() {
+        return screenHandler;
     }
 }
