@@ -1,8 +1,11 @@
 package de.lulkas_.vanilla_addons.block.entity.custom;
 
+import de.lulkas_.vanilla_addons.VanillaAddons;
 import de.lulkas_.vanilla_addons.block.entity.ImplementedInventory;
 import de.lulkas_.vanilla_addons.block.entity.ModBlockEntities;
+import de.lulkas_.vanilla_addons.block.entity.util.EnchantmentUpgraderOutputGeneration;
 import de.lulkas_.vanilla_addons.screen.custom.EnchantmentUpgraderScreenHandler;
+import de.lulkas_.vanilla_addons.block.entity.util.EnchantmentUpgraderOutput;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -20,10 +23,15 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class EnchantmentUpgraderBlockEntity extends BlockEntity implements ImplementedInventory, ExtendedScreenHandlerFactory<BlockPos> {
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY);
+    public final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY);
+    private EnchantmentUpgraderOutput output = new EnchantmentUpgraderOutput(ItemStack.EMPTY, 0);
+    public static final int INPUT_SLOT = 0;
+    public static final int OUTPUT_SLOT = 1;
 
     public EnchantmentUpgraderBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.ENCHANTMENT_UPGRADER_BE, pos, state);
@@ -35,9 +43,29 @@ public class EnchantmentUpgraderBlockEntity extends BlockEntity implements Imple
     }
 
     @Override
+    public boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
+        return slot == INPUT_SLOT;
+    }
+
+    @Override
+    public boolean canExtract(int slot, ItemStack stack, Direction side) {
+        return slot == OUTPUT_SLOT;
+    }
+
+    public void tick(World world, BlockPos pos, BlockState state) {
+        EnchantmentUpgraderOutput output = EnchantmentUpgraderOutputGeneration.getOutput(inventory.get(INPUT_SLOT));
+        this.output = output;
+        inventory.set(OUTPUT_SLOT, output.outputStack());
+    }
+
+    public EnchantmentUpgraderOutput getOutput() {
+        return output;
+    }
+
+    @Override
     protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        super.writeNbt(nbt, registryLookup);
         Inventories.writeNbt(nbt, inventory, registryLookup);
+        super.writeNbt(nbt, registryLookup);
     }
 
     @Override
@@ -53,12 +81,12 @@ public class EnchantmentUpgraderBlockEntity extends BlockEntity implements Imple
 
     @Override
     public Text getDisplayName() {
-        return Text.literal("Enchantment Upgrader");
+        return Text.translatable("block." + VanillaAddons.MOD_ID + ".enchantment_upgrader");
     }
 
     @Override
     public @Nullable ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new EnchantmentUpgraderScreenHandler(syncId, playerInventory, this.pos);
+        return new EnchantmentUpgraderScreenHandler(syncId, playerInventory, this);
     }
 
     @Override

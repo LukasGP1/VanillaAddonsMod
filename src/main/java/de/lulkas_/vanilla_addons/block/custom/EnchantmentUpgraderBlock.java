@@ -1,14 +1,18 @@
 package de.lulkas_.vanilla_addons.block.custom;
 
 import com.mojang.serialization.MapCodec;
+import de.lulkas_.vanilla_addons.block.entity.ModBlockEntities;
 import de.lulkas_.vanilla_addons.block.entity.custom.EnchantmentUpgraderBlockEntity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityTicker;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.ItemScatterer;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
@@ -48,8 +52,10 @@ public class EnchantmentUpgraderBlock extends BlockWithEntity implements BlockEn
     protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if(state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if(blockEntity instanceof EnchantmentUpgraderBlockEntity) {
-                ItemScatterer.spawn(world, pos, ((EnchantmentUpgraderBlockEntity) blockEntity));
+            if(blockEntity instanceof EnchantmentUpgraderBlockEntity enchantmentUpgraderBlockEntity) {
+                DefaultedList<ItemStack> stacks = enchantmentUpgraderBlockEntity.getItems();
+                stacks.set(EnchantmentUpgraderBlockEntity.OUTPUT_SLOT, ItemStack.EMPTY);
+                ItemScatterer.spawn(world, pos, stacks);
                 world.updateComparators(pos, this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
@@ -65,5 +71,13 @@ public class EnchantmentUpgraderBlock extends BlockWithEntity implements BlockEn
         }
 
         return ItemActionResult.SUCCESS;
+    }
+
+    @Override
+    public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+        if(world.isClient()) {
+            return null;
+        }
+        return validateTicker(type, ModBlockEntities.ENCHANTMENT_UPGRADER_BE, (world1, pos, state1, blockEntity) -> blockEntity.tick(world1, pos, state1));
     }
 }

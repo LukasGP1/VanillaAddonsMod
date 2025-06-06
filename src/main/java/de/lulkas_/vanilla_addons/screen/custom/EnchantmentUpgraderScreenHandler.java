@@ -1,5 +1,6 @@
 package de.lulkas_.vanilla_addons.screen.custom;
 
+import de.lulkas_.vanilla_addons.block.entity.custom.EnchantmentUpgraderBlockEntity;
 import de.lulkas_.vanilla_addons.screen.ModScreenHandlers;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,6 +13,7 @@ import net.minecraft.util.math.BlockPos;
 
 public class EnchantmentUpgraderScreenHandler extends ScreenHandler {
     private final Inventory inventory;
+    private final EnchantmentUpgraderBlockEntity blockEntity;
 
     public EnchantmentUpgraderScreenHandler(int syncId, PlayerInventory playerInventory, BlockPos pos) {
         this(syncId, playerInventory, playerInventory.player.getWorld().getBlockEntity(pos));
@@ -22,14 +24,18 @@ public class EnchantmentUpgraderScreenHandler extends ScreenHandler {
         this.inventory = ((Inventory) blockEntity);
 
         this.addSlot(new Slot(inventory, 0, 42, 35));
-        this.addSlot(new Slot(inventory, 1, 105, 36) {
-            @Override
-            public boolean canInsert(ItemStack stack) {
-                return false;
-            }
-        });
+        if(blockEntity instanceof EnchantmentUpgraderBlockEntity enchantmentUpgraderBlockEntity) {
+            this.blockEntity = enchantmentUpgraderBlockEntity;
+            this.addSlot(new EnchantmentUpgraderOutputSlot(inventory, 1, 105, 36, playerInventory.player, enchantmentUpgraderBlockEntity));
+        } else {
+            this.blockEntity = null;
+        }
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
+    }
+
+    public EnchantmentUpgraderBlockEntity getBlockEntity() {
+        return blockEntity;
     }
 
     @Override
